@@ -1,0 +1,10 @@
+server:
+  port: 8091
+  servlet:
+    application-display-name: test-comsumer
+spring:
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+      discovery:
+        register: false
