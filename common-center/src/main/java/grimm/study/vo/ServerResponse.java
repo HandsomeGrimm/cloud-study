@@ -13,21 +13,21 @@ public class ServerResponse<T> implements Serializable {
     private String info;
     private T data;
 
-    public  ServerResponse success(){
+    public static ServerResponse success(){
         ServerResponse response=new ServerResponse();
         response.code= ResultEnum.SUCCESS.getCode();
         response.info=ResultEnum.SUCCESS.getMessage();
         return response;
     }
 
-    public  ServerResponse success(String message){
+    public static ServerResponse success(String message){
         ServerResponse response=new ServerResponse();
         response.code= ResultEnum.SUCCESS.getCode();
         response.info=message;
         return response;
     }
 
-    public  ServerResponse success(T data){
+    public static<T> ServerResponse success(T data){
         ServerResponse response=new ServerResponse();
         response.code= ResultEnum.SUCCESS.getCode();
         response.info=ResultEnum.SUCCESS.getMessage();
@@ -35,7 +35,7 @@ public class ServerResponse<T> implements Serializable {
         return response;
     }
 
-    public ServerResponse success(String message, T data){
+    public static<T> ServerResponse success(String message, T data){
         ServerResponse response=new ServerResponse();
         response.code= ResultEnum.SUCCESS.getCode();
         response.info=message;
@@ -43,14 +43,14 @@ public class ServerResponse<T> implements Serializable {
         return response;
     }
 
-    public  ServerResponse error(){
+    public static ServerResponse error(){
         ServerResponse response=new ServerResponse();
         response.code=ResultEnum.SERVER_ERROR.getCode();
         response.info=ResultEnum.SERVER_ERROR.getMessage();
         return response;
     }
 
-    public  ServerResponse error(String message){
+    public static ServerResponse error(String message){
         ServerResponse response=new ServerResponse();
         response.code=ResultEnum.SERVER_ERROR.getCode();
         response.info=message;

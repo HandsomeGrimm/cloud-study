@@ -16,11 +16,11 @@ public class TestController {
             throw new CommonException(e);
         }
 
-        return new ServerResponse().success();
+        return ServerResponse.success();
     }
 
     @RequestMapping("/test")
     public ServerResponse test(){
-        return new ServerResponse().success();
+        return ServerResponse.success();
     }
 }
