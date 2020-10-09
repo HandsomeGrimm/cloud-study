@@ -6,7 +6,77 @@
 
     <groupId>grimm.study</groupId>
     <artifactId>cloud-study</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>config-center</module>
+        <module>config-center/exception-config-center</module>
+        <module>common-center</module>
+        <module>consumer-study</module>
+        <module>provider-study</module>
+        <module>register-study</module>
+    </modules>
+    <properties>
+        <core.version>1.0-SNAPSHOT</core.version>
+        <spring.boot.version>2.3.3.RELEASE</spring.boot.version>
+        <lombok.version>1.18.12</lombok.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+    </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>grimm.study</groupId>
+                <artifactId>config-center</artifactId>
+                <version>${core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>grimm.study</groupId>
+                <artifactId>common-center</artifactId>
+                <version>${core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>grimm.study</groupId>
+                <artifactId>exception-config-center</artifactId>
+                <version>${core.version}</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
 </project>
