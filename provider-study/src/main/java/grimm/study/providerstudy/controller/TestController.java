@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @RequestMapping("/test")
+    @RequestMapping("/exceptionTest")
     public ServerResponse exceptionTest() throws CommonException {
         try {
             System.out.println(1/0);
@@ -19,5 +19,8 @@ public class TestController {
         return new ServerResponse().success();
     }
 
-
+    @RequestMapping("/test")
+    public ServerResponse test(){
+        return new ServerResponse().success();
+    }
 }

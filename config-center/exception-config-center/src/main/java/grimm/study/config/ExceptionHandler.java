@@ -2,9 +2,9 @@ package grimm.study.config;
 
 import grimm.study.exception.CommonException;
 import grimm.study.vo.ServerResponse;
-import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class ExceptionHandler {
 
     @org.springframework.web.bind.annotation.ExceptionHandler(CommonException.class)

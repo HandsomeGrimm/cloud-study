@@ -21,6 +21,9 @@
         <spring.boot.version>2.3.3.RELEASE</spring.boot.version>
         <lombok.version>1.18.12</lombok.version>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <zookeeper.version>2.1.4.RELEASE</zookeeper.version>
+        <httpclient.version>4.5.12</httpclient.version>
+        <thymeleaf.version>2.3.3.RELEASE</thymeleaf.version>
     </properties>
 
     <dependencies>
@@ -76,6 +79,25 @@
                 <artifactId>exception-config-center</artifactId>
                 <version>${core.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+                <version>${thymeleaf.version}</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>
