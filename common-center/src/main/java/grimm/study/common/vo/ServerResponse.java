@@ -56,4 +56,12 @@ public class ServerResponse<T> implements Serializable {
         response.info=message;
         return response;
     }
+
+    public static<T> ServerResponse error(String message,T data){
+        ServerResponse response=new ServerResponse();
+        response.code=ResultEnum.SERVER_ERROR.getCode();
+        response.info=message;
+        response.data=data;
+        return response;
+    }
 }

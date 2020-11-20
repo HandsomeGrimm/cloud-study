@@ -9,6 +9,7 @@ public enum ResultEnum implements IErrorCode {
 
 
 
+    AUTHORIZATION_ERROR(40001,"认证失败"),
 
     SERVER_ERROR(99999,"服务器错误"),
 
@@ -20,5 +21,13 @@ public enum ResultEnum implements IErrorCode {
     ResultEnum(Integer code,String message){
         this.code=code;
         this.message=message;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
     }
 }
